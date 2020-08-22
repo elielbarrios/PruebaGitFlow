@@ -1,0 +1,478 @@
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (master)
+$ git flow init
+
+Which branch should be used for bringing forth production releases?
+   - master
+Branch name for production releases: [master]
+Branch name for "next release" development: [develop]
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/] f/
+Bugfix branches? [bugfix/] b/
+Release branches? [release/] r/
+Hotfix branches? [hotfix/] h/
+Support branches? [support/] s/
+Version tag prefix? []
+Hooks and filters directory? [C:/Users/eliel/Desktop/Prueba/PruebaGitFlow/.git/hooks]
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git push
+fatal: The current branch develop has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin develop
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git push --set-upstream origin develop
+
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'develop' on GitHub by visiting:
+remote:      https://github.com/elielbarrios/PruebaGitFlow/pull/new/develop
+remote:
+To https://github.com/elielbarrios/PruebaGitFlow.git
+ * [new branch]      develop -> develop
+Branch 'develop' set up to track remote branch 'develop' from 'origin'.
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git flow feature start login
+Switched to a new branch 'f/login'
+
+Summary of actions:
+- A new branch 'f/login' was created, based on 'develop'
+- You are now on branch 'f/login'
+
+Now, start committing on your feature. When done, use:
+
+     git flow feature finish login
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/login)
+$  git flow feature finish login
+
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+Already up to date.
+Deleted branch f/login (was 6231d7d).
+
+Summary of actions:
+- The feature branch 'f/login' was merged into 'develop'
+- Feature branch 'f/login' has been locally deleted
+- You are now on branch 'develop'
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$  git flow feature finish login
+Fatal: Branch 'f/login' does not exist and is required.
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git flow feature start login
+Switched to a new branch 'f/login'
+
+Summary of actions:
+- A new branch 'f/login' was created, based on 'develop'
+- You are now on branch 'f/login'
+
+Now, start committing on your feature. When done, use:
+
+     git flow feature finish login
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/login)
+$ git add .
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/login)
+$ git commit -m 'add alv'
+[f/login 213b12d] add alv
+ 1 file changed, 1 insertion(+)
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/login)
+$ git push
+fatal: The current branch f/login has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin f/login
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/login)
+$ ^C
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/login)
+$ git push --set-upstream origin f/login
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 299 bytes | 299.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'f/login' on GitHub by visiting:
+remote:      https://github.com/elielbarrios/PruebaGitFlow/pull/new/f/login
+remote:
+To https://github.com/elielbarrios/PruebaGitFlow.git
+ * [new branch]      f/login -> f/login
+Branch 'f/login' set up to track remote branch 'f/login' from 'origin'.
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/login)
+$  git flow feature finish login --keepremote
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+Updating 6231d7d..213b12d
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+Deleted branch f/login (was 213b12d).
+
+Summary of actions:
+- The feature branch 'f/login' was merged into 'develop'
+- Feature branch 'f/login' has been locally deleted; it is still remotely available on 'origin'
+- You are now on branch 'develop'
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/elielbarrios/PruebaGitFlow.git
+   6231d7d..213b12d  develop -> develop
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git flow release start v.0.1
+Switched to a new branch 'r/v.0.1'
+
+Summary of actions:
+- A new branch 'r/v.0.1' was created, based on 'develop'
+- You are now on branch 'r/v.0.1'
+
+Follow-up actions:
+- Bump the version number now!
+- Start committing last-minute fixes in preparing your release
+- When done, run:
+
+     git flow release finish 'v.0.1'
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (r/v.0.1)
+$ ^C
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (r/v.0.1)
+$ git flow release finish 'v.0.1'
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+hint: Waiting for your editor to close the file...
+Merge made by the 'recursive' strategy.
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+Already on 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+hint: Waiting for your editor to close the file...
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+Already up to date!
+hint: Waiting for your editor to close the file...
+Merge made by the 'recursive' strategy.
+Deleted branch r/v.0.1 (was 213b12d).
+
+Summary of actions:
+- Release branch 'r/v.0.1' has been merged into 'master'
+- The release was tagged 'v.0.1'
+- Release tag 'v.0.1' has been back-merged into 'develop'
+- Release branch 'r/v.0.1' has been locally deleted
+- You are now on branch 'develop'
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git push
+Enumerating objects: 2, done.
+Counting objects: 100% (2/2), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 354 bytes | 177.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/elielbarrios/PruebaGitFlow.git
+   213b12d..5e6d8b7  develop -> develop
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (master)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/elielbarrios/PruebaGitFlow.git
+   6231d7d..752b45a  master -> master
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (master)
+$ git push --tag
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 161 bytes | 161.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/elielbarrios/PruebaGitFlow.git
+ * [new tag]         v.0.1 -> v.0.1
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (master)
+$ gitk
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (master)
+$ git flow feature start registro
+Switched to a new branch 'f/registro'
+
+Summary of actions:
+- A new branch 'f/registro' was created, based on 'develop'
+- You are now on branch 'f/registro'
+
+Now, start committing on your feature. When done, use:
+
+     git flow feature finish registro
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/registro)
+$ git add .
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/registro)
+$ git commit -m 'add hola'
+[f/registro 1d22cc1] add hola
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/registro)
+$ git push
+fatal: The current branch f/registro has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin f/registro
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/registro)
+$ git push --set-upstream origin f/registro
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 481 bytes | 240.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'f/registro' on GitHub by visiting:
+remote:      https://github.com/elielbarrios/PruebaGitFlow/pull/new/f/registro
+remote:
+To https://github.com/elielbarrios/PruebaGitFlow.git
+ * [new branch]      f/registro -> f/registro
+Branch 'f/registro' set up to track remote branch 'f/registro' from 'origin'.
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/registro)
+$ git flow feature finish registro --keepremote
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+Updating 5e6d8b7..1d22cc1
+Fast-forward
+ README.md | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+Deleted branch f/registro (was 1d22cc1).
+
+Summary of actions:
+- The feature branch 'f/registro' was merged into 'develop'
+- Feature branch 'f/registro' has been locally deleted; it is still remotely available on 'origin'
+- You are now on branch 'develop'
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git push
+To https://github.com/elielbarrios/PruebaGitFlow.git
+ ! [rejected]        develop -> develop (fetch first)
+error: failed to push some refs to 'https://github.com/elielbarrios/PruebaGitFlow.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 273 bytes | 15.00 KiB/s, done.
+From https://github.com/elielbarrios/PruebaGitFlow
+   5e6d8b7..5f62b44  develop    -> origin/develop
+hint: Waiting for your editor to close the file...
+Merge made by the 'recursive' strategy.
+ New Text Document.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 New Text Document.txt
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git status
+On branch develop
+Your branch is ahead of 'origin/develop' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 357 bytes | 357.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/elielbarrios/PruebaGitFlow.git
+   5f62b44..943c769  develop -> develop
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git flow feature start carrito
+Switched to a new branch 'f/carrito'
+
+Summary of actions:
+- A new branch 'f/carrito' was created, based on 'develop'
+- You are now on branch 'f/carrito'
+
+Now, start committing on your feature. When done, use:
+
+     git flow feature finish carrito
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/carrito)
+$ git push
+fatal: The current branch f/carrito has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin f/carrito
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/carrito)
+$  git push --set-upstream origin f/carrito
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 618 bytes | 309.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'f/carrito' on GitHub by visiting:
+remote:      https://github.com/elielbarrios/PruebaGitFlow/pull/new/f/carrito
+remote:
+To https://github.com/elielbarrios/PruebaGitFlow.git
+ * [new branch]      f/carrito -> f/carrito
+Branch 'f/carrito' set up to track remote branch 'f/carrito' from 'origin'.
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/carrito)
+$ git status
+On branch f/carrito
+Your branch is up to date with 'origin/f/carrito'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   New Text Document.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/carrito)
+$ git add .
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/carrito)
+$ git commit -m 'dafd'
+[f/carrito 0804bc5] dafd
+ 1 file changed, 1 insertion(+)
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/carrito)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 300 bytes | 300.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/elielbarrios/PruebaGitFlow.git
+   943c769..0804bc5  f/carrito -> f/carrito
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (f/carrito)
+$ git flow feature finish carrito --keepremote
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+Updating 943c769..0804bc5
+Fast-forward
+ New Text Document.txt | 1 +
+ 1 file changed, 1 insertion(+)
+Deleted branch f/carrito (was 0804bc5).
+
+Summary of actions:
+- The feature branch 'f/carrito' was merged into 'develop'
+- Feature branch 'f/carrito' has been locally deleted; it is still remotely available on 'origin'
+- You are now on branch 'develop'
+
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git push
+To https://github.com/elielbarrios/PruebaGitFlow.git
+ ! [rejected]        develop -> develop (fetch first)
+error: failed to push some refs to 'https://github.com/elielbarrios/PruebaGitFlow.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git pull
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 5 (delta 0), pack-reused 0
+Unpacking objects: 100% (5/5), 613 bytes | 25.00 KiB/s, done.
+From https://github.com/elielbarrios/PruebaGitFlow
+   943c769..e5363c8  develop    -> origin/develop
+Auto-merging New Text Document.txt
+CONFLICT (content): Merge conflict in New Text Document.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop|MERGING)
+$ git status
+On branch develop
+Your branch and 'origin/develop' have diverged,
+and have 1 and 2 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   New Text Document.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop|MERGING)
+$ git add .
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop|MERGING)
+$ git commit -m 'arreglo conflicto'
+[develop a2044fb] arreglo conflicto
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 346 bytes | 173.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/elielbarrios/PruebaGitFlow.git
+   e5363c8..a2044fb  develop -> develop
+
+eliel@DESKTOP-UO1FBE5 MINGW64 ~/Desktop/Prueba/PruebaGitFlow (develop)
+$
